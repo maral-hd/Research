@@ -1,0 +1,5 @@
+In this paper, authors used pagerank alg to show that which classes are more critical and then they mentioned that those critical classes should be test first.
+For testing they have used ECGM which is a graph based method. 
+They have been inspired by "who should fix this bug"!
+Also they consider some other factor such as rate of structural change for each class. 
+They used Tabo search for pagerank. 

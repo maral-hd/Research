@@ -1,0 +1,183 @@
+\section{Introduction}
+\label{sec:introduction}
+% what is the problem?
+During application's life it may change several times, and one change can affect the entire system.
+To avoid the undesirable change or bugs, system testers need to  
+test the overall functionality of the system before deploy the new release of the system.
+One of the most common way to evaluate the system quality in sequence of release is regression testing.
+In regression testing, testers check the software to ensure that new changes have not 
+introduced new faults or it did not effect the other parts of system.
+Applying regression testing before deploying new release of the software, make the 
+change process safer and more confident for developers.
+
+As software grow, the size of test suite grow in a same
+manner, eventually testing the entire system can become expensive and may take
+40\% of whole project budget[].  Moreover, it is not feasible to test every single 
+function of the system especially for large scale systems it may takes several days 
+to execute test cases. Several techniques have been proposed to solve this issue 
+%by reducing the cost and effort of system testing.
+such as, test reduction which is a 
+technique that select subset of test cases that can address most of the issues, 
+test selection also is a similar to test reduction but the main difference is 
+this technique, select test cases based on their correlation with the changes 
+in tow versions of the subject, and test case prioritization [].
+
+% what approaches have been proposed?
+Test case prioritization is a technique to catch the faults earlier, 
+by executing the most important test cases first.
+So far, many prioritization strategies have been proposed by researchers [] and
+many techniques have been purposed such as : greedy techniques [], change impact analysis [],
+clustering approaches[], user session based techniques [], etc. 
+but most of the investigated studies are based on two main features: code coverage and 
+code complexity metrics. Meanwhile, there are many other features of the software 
+that can be a factor of failure or can be a hint to find the failure causes. 
+One interesting feature of web application is that recording users interaction data
+is a way easier compare to other types of applications. 
+Different types of data from users interaction can be
+monitored, such as users sessions, cookies, telemetry data, users IP address etc. 
+Storing and collection log files and users sessions nowadays are less costly and more 
+accessible compare to past decades, due to lower price of the IT services and hardware.
+We can store information in database or cloud system 
+rather than log files which was a traditional way to storing system back up. 
+Having all these types of data and facilities, enables testers to identify most frequently used
+components which impact the system strongly. 
+% jeff paper
+
+% why they didint work?
+Previous studies shown that change history has more significant role in 
+terms of finding faults than code metrics []. 
+Although, there are several research have been done about the efficiency of 
+change metrics for defect prediction, such as [] but, researchers only focused on 
+measuring the causes and effect of the changes in software. 
+Moreover, users session and telemetry data 
+have been used as a factor for research in software testing. 
+For example, Elbaum et al.~\cite{elbaum2005profiling} performed a study on regression 
+prioritization focusing prioritization at a product level 
+by using telemetry from installations. 
+Their work was extended in several domain such as, performance issue detection ~\cite{parsons2007automatic},
+bug detection ~\cite{wang2008approach}, reliability testing of rule-based 
+systems ~\cite{avritzer1996reliability} and failure reproduction ~\cite{jin2012bugredux}. 
+Sampath et al. ~\cite{Sampath2008} applied multiple techniques for prioritizing test cases 
+by using user sessions as a factor for their techniques. 
+
+
+Lets conciser a typical test prioritization based on change history. 
+In this scenario, testing is based on executing any component that has been 
+changed in new release of software [1-2], % ref: A Comparison of Coverage-Based and Distribution-Based Techniques for Filtering and Prioritizing Test Cases
+while this could be a minor change that 
+does not have a considerable impact on the entire system, 
+such as renaming a function or can be a 
+component that is used seldom by users, etc. 
+In another scenario, we reorder test cases based on the component frequency, 
+meanwhile, there might be no change in this particular component compare to previous version.
+For example, generally, core components in a system are mostly used components in the entire system 
+while, those components due to their significant role have been tested several times and rarely change. 
+Due to above challenges, we belive that current studies in test prioritization 
+is neither efficient nor sufficient to address the test priritization problem. 
+%We believe that applying multiple factors
+%rather than focusing on a specific viewpoint would help improve test case prioritization techniques.
+
+%such as, extracting usage patterns from telemetry data besides analysis of change history. 
+
+
+% what is your solution and why this work?
+In this paper we proposed an item based collaborative filtering recommender system 
+for test case prioritization in web application which, uses the telemetry 
+data as input for users rating and change history of applications 
+as items information. The output of our recommender system is the prioritized test 
+cases in a way to obtain the better results in terms of finding faults earlier. 
+We applied our recommender system in three open source system and one commercial system.
+Our hypothesis is: Combination of various metrics can lead us to design 
+more efficient model for fault detection. Our approach focuses on both users 
+interaction and change history metrics to detect most risky components, then by 
+automating the detection of regression issues, we are reducing the analysis effort for 
+test prioritization. Our recommender system, may not locate the regression issue sources 
+directly, but it will provide a  list of top potential risky components. 
+
+The main contributions of this study are as follows:
+1) Proposing a new hybrid test prioritization technique for web applications domain, 
+2) Empirical evaluation of proposed technique and three other control techniques, and
+3) Highlighting issues occurred during applying the proposed technique and its limitation 
+and guidance to testers upon the results of our study. 
+
+The rest of the paper is organized as follows. In Section 2, we
+discuss the approach used in the research as well as formally define
+collaborative filtering recommender systems. In Section 3, we detail the empirical study
+that we performed. Section 4 provides the results of the study. 
+Section 5 discusses the results and the implications of these results, and
+Section 7 presents related work. Finally, in Section 8, we provide
+conclusions and discuss future work.
+
+
+
+
+%The usage of web application in nowadays is very clear for verity of people 
+%from IT expert to someone with minimum knowledge of the Internet. 
+%Not only many business are dependent on web applications but also
+%web application grow very fast, and number of users of web application are
+%growing exponentially, these factor made software engineer to spend 
+%more time on deign robust system with minimum failure risk. 
+%One small bug can cost so much money and time for the company.
+%So far many research have been done to eliminate the risk of
+%web applications failure such as test driven development, regression testing, 
+%and many more but they are not sufficient neither optimum to detect the faults 
+%when it occurs. 
+%
+%During application life it may change several times, and one change can affect the entire system.
+%To avoid the undesirable change or bugs, system testers need to  
+%test the overall functionality of the system before deploy the new release of the system.
+%But still there might be some issues that can be observe later after deployment.
+%One of the most common way to evaluate the system quality is regression testing.
+%In regression testing, tester are seeking to find the cause of system failure 
+%between old and new versions. Advantage of regression testing is, it make the 
+%change process safer and more confident for developers.
+%By fast increasing size of software systems, 
+%size of test suits grow exponentially as a result, testing the whole system is a time consuming process 
+%and can take several days, also it is not feasible to test every function of the system.
+%Test case prioritization is 
+%a technique to catch the faults earlier, by executing the most important test cases first.
+%There are different ways to reorder test cases such as code coverage based, 
+%based on frequency of use, based on system architecture and many other statistical technique [xx].
+%
+%
+%Another feature of web applications which made it more popular
+%compare to other types of software systems is users monitoring and recording 
+%users activity is a way easier and accessible [bryce and others]. 
+%% example of ppl who used telemetry
+%% and converting usage
+%There are different types of data from users interaction can be
+%monitored, such as users sessions, cookies, telemetry data, users IP address etc. 
+%having all these information has several benefits but to mention the most significant in testing area is that it gives an opportunity to the system tester
+%to extract the pattern of most frequently used components of the system so, they can spend more effort 
+%of fixing issues of such a components than others.
+%
+%In this paper we proposed a collaborative filtering recommender system 
+%for test case prioritization in web application which, uses the telemetry 
+%data as input data of users interaction and change history of applications 
+%as items information. The output of our recommender system is the prioritized test 
+%cases in a way to obtain the better results in terms of finding faults earlier. 
+%We apply our recommender system in three open source system and one commercial system.
+%
+%The rest of the paper is organized as follows. In Section 2, we
+%discuss the approach used in the research as well as formally define
+%telemetry fingerprinting. In Section 3, we detail the empirical study
+%that we performed. Section 4 provides the results of the study. 
+%Section 5 discusses the results and the implications of these results, and
+%Section 7 presents related work. Finally, in Section 8, we provide
+%conclusions and discuss future work.
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

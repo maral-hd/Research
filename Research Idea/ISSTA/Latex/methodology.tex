@@ -1,0 +1,145 @@
+%\section{Methodology}
+%\label{sec:method}
+%
+%
+%
+%
+%\subsection{Architecture}
+%\label{sec:artitecture}
+
+%\begin{figure*}[!ht]
+%	\centering
+%	\includegraphics[width=0.75\linewidth]{./SystemView.png}
+%	\vspace*{-3pt}
+%	\caption{Architecture of our Risk Analyzer system}
+%	\label{fig:systemview}
+%\end{figure*}
+
+%In this section we briefly describe our system architecture. 
+%Figure ~\ref{fig:systemview} presents our proposed technique overview. 
+%\textbf{Code Repository} is a repository that contains code behind. \\
+%\textbf{Parser} parses code repository information regarding the changed files, lines
+%and types (add, delete, change). The parser will pair
+%delete with add and reduce them to replace. \\
+%\textbf{Metrics Analyzer} extract the code and change metrics and 
+%will generate a table of change and 
+%code metrics feature values for each component. \\
+%\textbf{Component Clustering} will cluster our components based on 
+%their change and code metrics similarities. 
+%Result will be three main cluster, high, medium and low risk. 
+%For classifying components we applied KNN algorithm. \\
+%\textbf{Call Graph Ranking Score Repository} calculate the the static call graph for each components
+%and then based on the obtained graph, by applying Pagerank algorithm we will
+%have the score of each component. 
+%In section x we will describe Pagerank algorithm briefly. \\
+%\textbf{Components Risk Score Calculator} calculates the risk score 
+%for each component based on the number of execution and calling 
+%from other components and obtained cluster from our clustering algorithm.\\
+%Finally we will have a matrix of components and their risk rank, 
+%based on these information we will prioritize our components for testing. 
+%High risk component will be test first and low risks could be ignore or test later.
+
+
+%\subsection {Risk Analysis}
+%\subsubsection{Metrics}
+%In this study, we are interested in identifying code metrics as well as
+%risky changes and determining which factors best indicate risky changes.
+%Table ~\ref{tab:metrics} shows the collection of our selected metrics.
+
+
+%\begin{table}[!ht]
+%	\caption{Subject Applications properties}
+%	\vspace*{-10pt}
+%	\begin{center}
+%	\begin{tabular}{ |l|l|l| }
+%		\hline
+%		\multicolumn{3}{ |c| }{Code Quality Metrics} \\
+%		\hline
+%		Group & Metric Name & Description \\ \hline
+%		\multirow{7}{*}{Code Metrics} & LOC & Lines of code. \\
+%		& Class Coupling &  The class coupling.\\
+%		& Number of Parameters & The number of parameter contained in a class. \\
+%		& Number of Operator &   The number of operator contained in a class.\\
+%		& Number of Operands &  The number of operands contained in a class. \\
+%		& Depth of Inheritance  &  The Depth of inheritance of a class.\\
+%		& Cyclomatlic Complexity &  The cyclomatic complexity of a class.\\ 
+%		& Number of functions &  The number of functions contained in a class.\\
+%		& Cyclomatlic Complexity &  The cyclomatic complexity of a class.\\\hline 
+%		\multirow{7}{*}{Change Metrics} & Time & Time when the change was made. \\
+%		& Revision & The number of revision of a file. \\
+%		& Line Added & The number of lines added as part of the change. \\
+%		& Line deleted & The number of lines deleted as part of the change. \\
+%		& Lines Modified & The number of lines modified as part of the change.\\
+%		& Chunks Modified & The number of chunks (i.e., different sections)
+%		modified as part of the change. \\
+%		& Churn & The total number of lines added, deleted and modified as part of the change. \\ \hline
+%	\end{tabular}
+%		\end {center}
+%		\label{tab:metrics}
+%		\vspace*{-5pt}
+%	\end{table}
+
+
+
+%To support our regression test generation approach 
+%for web applications, we have developed PARTE (PHP 
+%Analysis and Regression Testing Engine).
+%Figure~\ref{fig:overview} summarizes PARTE's three 
+%main activities (light green boxes) and how these 
+%activities are related to each other.
+%Although we implemented the regression test generation technique
+%that is applied to PHP web applications, the methodology we apply 
+%here can easily be applied to other languages by extending the 
+%front end file conversion functionality.   
+%When we generate test cases, we considered test paths and input
+%values that make test paths executable. Another important component 
+%of test cases is test oracles that verify test results, however, 
+%in this work, we have not considered test oracles, and we discuss
+%the limitation of our work related to the test oracle issue in 
+%Section~\ref{sec:limitations}.
+%
+%%\begin{figure*}[ht]
+%\begin{figure*}[!ht]
+%%\vspace*{-5pt}
+%\centering
+%\includegraphics[width=0.8\columnwidth]{figures/parte-overview.pdf}
+%%    \includegraphics[width=0.8\textwidth]{figures/overview.eps}
+%\vspace*{-40pt}
+% \caption{Overview of PARTE} 
+%\label{fig:overview}
+%\end{figure*}
+%
+%Before we describe each activity in detail,
+%we provide a brief overview of our approach.
+%
+%\begin{smallitem}
+%\item {\bf Preprocessing} (the upper-left box in Figure~\ref{fig:overview}).
+%In this step, PARTE converts abstract syntax trees (ASTs) generated by
+%a PHP compiler, PHC~\cite{phc}, to high-level
+%intermediate representation (HIR) that preserves variable
+%names and converts this HIR back to ASTs.   
+%
+%\item {\bf Impact Analysis} (the lower box in Figure~\ref{fig:overview}).
+%Using preprocessed files, a PDG (Program Dependence Graph) generator 
+%builds PDGs for the two consecutive versions of a PHP web application. 
+%Then, a differencing tool and a program slicer identify 
+%the affected areas by the code changes (program slices).
+%
+%\item {\bf Test Case Generation} (the upper-right box 
+%in Figure~\ref{fig:overview}).
+%A test path generator creates test paths using program slices. 
+%A constraint collector/resolver gathers string and numeric 
+%input constraints, and resolves them using a constraint 
+%solver, Choco~\cite{choco}.
+%Finally, a test execution engine takes these resolved input 
+%values, executes the application through Selenium~\cite{selenium},
+%and records the test execution results.
+%The last step is done manually because the current path 
+%generator does not provide web elements for Selenium.
+% 
+%\end{smallitem}
+%
+%\input{ast.tex}
+%\input{impact.tex}
+%\input{testgen.tex}
+%

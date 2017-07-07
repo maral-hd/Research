@@ -1,0 +1,204 @@
+
+\subsection{Test Generation}
+
+%\input{algorithm.tex}
+%\input{algorithm-sub.tex}
+%
+%In this phase, we need three steps:
+%(1) test path generation, (2) input constraint collection
+%and resolution, and (3) test execution.
+%The following subsections describe each step in detail.
+%  
+%\vspace*{3pt}
+%\subsubsection{Path Generation}
+%
+%The path generator creates linearly independent test paths 
+%using the slices collected from the previous step.
+%A {\em linearly independent path} is a path that includes 
+%at least one edge that has not been traversed previously 
+%(in a given set of paths under construction)~\cite{pressman}.
+%
+%Algorithms~\ref{fig:pathAlgol}
+%show how to generate test paths using slices. The algorithm 
+%is separated into two parts. The first part, 
+%Algorithm~\ref{fig:pathAlgol}, iterates through and gathers 
+%the nodes from the slice to use in the PDG traversing procedure. 
+%The second part, Algorithm~\ref{fig:walkpath}, is the PDG 
+%traverser which follows a subpath through the PDG using 
+%the nodes in the slice as a guide. Algorithm~\ref{fig:pathAlgol} 
+%begins by iterating through every remaining node in each slice.
+%
+%The PDG traverser (Algorithm~\ref{fig:walkpath}) begins 
+%by analyzing a node in the PDG. If the node being 
+%processed occurs after every node in the array of 
+%remaining slice nodes (line 2), the PDG traverser checks 
+%to see if the currently processed node can reach an end node 
+%(a node where change propagation terminates) in the original 
+%slice (lines 30 and 31). If the node can, it adds the path to 
+%an end node of the current path (line 32). Otherwise, the path 
+%is discarded (line 33).
+%
+%If the node that is being processed occurs
+%before any of the end nodes in the slice, the node is 
+%checked to see if it can reach the changed node (line 3). 
+%If it cannot, the path is discarded.
+%The PDG traverser then checks to see if a node is
+%in the array of slice nodes. If it is, that
+%node is removed from the array (lines 6 and 7).
+%Every time the PDG traverser encounters a node with more than 
+%one edge that has not been traversed, it creates a new subpath 
+%that is a copy of itself for each of these edges and follows 
+%them (lines 9-18). Once construction of the path has been 
+%completed, the path is added to the path array (line 37).
+%
+%After subpath construction is finished, the first node 
+%in a subpath is traced to an entry point for the program, 
+%and the last node is traced to an exit point for the program 
+%(line 16 of Algorithm~\ref{fig:pathAlgol}). 
+%Algorithm~\ref{fig:pathAlgol} describes the basic construction 
+%of these paths while omitting, for brevity, all special cases 
+%that occur for cyclic graphs (loops and recursion).
+%
+%\subsubsection{Constraint Gathering and Resolution}
+%
+%Because the generated test paths contain only input parameters, not 
+%actual input values, the input values need to be assigned to the 
+%parameters to make test paths executable.
+%The constraint collector collects constraints on input
+%values needed to execute a particular program execution path.
+%Its inputs are the outputs from the PDG generator and path
+%generator. The top-level activities in the constraint collector
+%are parsing the path and PDG XML files, generating constraints
+%for each path, and writing the collected path constraints to
+%an XML file. 
+%
+%Constraint collection begins with path nodes that contain
+%a conditional statement. The primary activities to collect
+%constraints are determining the truth value of conditional
+%statements and reducing the conditional expression in these
+%statements. 
+%%A constraint is recorded only if it is not
+%%a duplicate for a previously recorded constraint.
+%A path constraint corresponds to a path PDG node with an
+%``if'' statement. To determine the truth value of
+%a constraint, the collector looks ahead one node in the
+%path node list and examines the node type (which will be
+%necessarily either \textit{true} or \textit{false}). After
+%determining the constraint truth value, the constraint
+%condition is then recursively reduced. Reduction of
+%an expression involves parsing the expression string
+%to determine the expression type (using regular expression
+%matching), creating an expression object with this type,
+%assigning any expression attributes from the parsed information
+%(e.g., operator type) to the expression object, and generating
+%appropriate expression objects for child expressions (if any).
+%If there are child expressions, they are recursively reduced
+%in the same way.
+%
+%Each type of expression provides its own method for reducing
+%child expressions, in order to take advantage of information
+%on the reduction context. For example, a compound boolean
+%expression must have child expressions that are themselves
+%boolean. When generating child expressions, this information
+%can be provided, in addition to that which is provided by
+%regular expression matching. This is useful in verifying
+%that generated expressions are of the correct type.
+%
+%If regular expression matching determines an expression
+%to be a variable (e.g., \$num\_of\_files), the reduction
+%process involves additional steps:
+%
+%\begin{enumerate}
+%  \item The collector backtracks in the path node list,
+%starting at the index of the variable node. It continues
+%backtracking until a PDG node is encountered that provides
+%a definition of the variable, or until the beginning of
+%the list is reached. In the case that a definition is found,
+%the expression generated for the variable is of the complex
+%variable type. This type is used for variables that can be
+%defined in terms of other expressions. If, instead, no
+%variable definition is found before reaching the start of
+%the list, the expression generated is of the simple variable type.
+%
+%  \item Regular expression matching is performed on the
+%variable expression string to determine if it is indexed
+%(e.g., \$files[\$id]). These correspond to PHP array variables.
+%An expression is then generated for the index of the array, and
+%the generated expression for the variable is an indexed version
+%of the type determined via backtracking (i.e., simple or complex 
+%type).
+%\end{enumerate}
+%
+%The recursive reduction process terminates on expressions of
+%simple type, since simple type expressions do not contain
+%child expressions that need to be reduced.
+%After collecting a constraint, the collector records it for
+%inclusion in the output. 
+%%This step is only done if an equivalent
+%%constraint is not already present in the list in order to
+%%avoid outputting duplicate constraints. 
+%Once all path constraints
+%have been generated, the collector writes the constraint information
+%in XML format. 
+%
+%The tool uses an existing constraint solver, {\em Choco},
+%to determine the input values that satisfy the constraints
+%for a given execution path (if such satisfaction is feasible).
+%{\em Choco} is an open-source software and  consists of a set
+%of libraries written in Java that provide many constraint solving
+%features. It provides direct support for solving numeric and
+%boolean constraints. We also use it to solve string constraints
+%by mapping these constraints to equivalent constraints on integers. 
+%Once all input values have been created, they are stored in XML file 
+%format to be used later by the test execution engine.
+%These files contain information about program paths and a list of input 
+%variables for the paths. For each input variable, the variable type, 
+%name, and value are given. 
+%Resolving the inputs that use built-in PHP functions is not supported 
+%by our tool, so those inputs require manual resolution. 
+%Further, the constraint resolution tool sets the time limit for 
+%input resolution, and it reports infeasible when it cannot find 
+%the value within the time limit. Also, if the conditions for a 
+%variable have conflict, the tool reports that case as infeasible.
+%
+%\subsubsection{Test Execution}
+%
+%Having assigned all input values to the parameters in the test 
+%paths, we implemented a test execution engine that executes
+%test cases over web applications using Selenium~\cite{selenium}.
+%We used the Selenium WebDriver API (more specifically, the FirefoxDriver) 
+%to set the web page elements according to the variable constraints for 
+%the given execution path being tested. If test execution requires setup 
+%logic, such as authentication, this is also performed using the WebDriver 
+%API. Finally, the WebDriver API is used to execute the PHP file and the 
+%results are passed to the test engine.
+%As mentioned earlier, web elements are created manually becasue the current 
+%path generator does not provide them.
+%
+%The reason that we have chosen to use the WebDriver API is that it allows us 
+%to perform all the activities that will be required: finding and setting web 
+%elements; performing any setup tasks required before the test case can be 
+%executed (such as authentication); retrieving test execution results in the 
+%HTML format.
+%
+%To give a better understanding of how the approach works, we use an e-commerce 
+%example. Assume that we have two PHP files, login.php and add\_card.php, both 
+%of which are accessed on different web pages. login.php contains the login 
+%form that users can register/authenticate with, and add\_card.php allows 
+%authenticated users to add their credit card information. Both login.php 
+%and add\_card.php contain entry points for certain execution paths.
+%
+%If add\_card.php was modified between Version 1 and Version 2, we can run 
+%the toolchain on this version pair and determine the constraints necessary 
+%to test execution paths with entry points beginning in that file. Using 
+%the Selenium WebDriver API, we can first access the login form contained 
+%on login.php to register/authenticate the user. Afterwards, we use the 
+%same API to directly execute add\_card.php, after initializing the values 
+%of the web elements associated with path constraints. It would not be 
+%necessary to start from login.php, since the PHP \$\_SESSION variables 
+%used for authentication would still be valid during execution of add\_card.php, 
+%regardless of the navigational path for arriving at this page. The results 
+%of executing add\_card.php are recorded as an HTML file.
+%
+%
+%\input{example-description.tex}

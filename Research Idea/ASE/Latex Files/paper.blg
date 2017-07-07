@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: paper.aux
+The style file: plain.bst
+Database file #1: paper.bib
+I was expecting a `,' or a `}'---line 5284 of file paper.bib
+ : 
+ : pages = {150--159},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "apfd"
+Warning--I didn't find a database entry for "myra"
+Warning--I didn't find a database entry for "change3"
+Warning--I didn't find a database entry for "sungmicro"
+Warning--I didn't find a database entry for "shihab12"
+Warning--I didn't find a database entry for "raimund"
+Warning--I didn't find a database entry for "change1"
+Warning--I didn't find a database entry for "change2"
+Warning--I didn't find a database entry for "catal13"
+Warning--I didn't find a database entry for "marksurvey"
+Warning--I didn't find a database entry for "cost3"
+Warning--I didn't find a database entry for "cost1"
+Warning--I didn't find a database entry for "Malishevsky02"
+Warning--I didn't find a database entry for "jeffrey06sep"
+Warning--I didn't find a database entry for "sherriff07"
+Warning--I didn't find a database entry for "mirarab07"
+Warning--I didn't find a database entry for "jeff16"
+Warning--I didn't find a database entry for "memongui"
+Warning--I didn't find a database entry for "rich"
+Warning--I didn't find a database entry for "ryan"
+Warning--I didn't find a database entry for "jeff14"
+Warning--I didn't find a database entry for "kagdichange"
+Warning--I didn't find a database entry for "recomsurvey05"
+Warning--I didn't find a database entry for "rssebook"
+Warning--I didn't find a database entry for "murakami"
+Warning--I didn't find a database entry for "costas"
+Warning--I didn't find a database entry for "contextawar"
+You've used 3 entries,
+            2118 wiz_defined-function locations,
+            572 strings with 5323 characters,
+and the built_in function-call counts, 1039 in all, are:
+= -- 93
+> -- 54
+< -- 0
++ -- 22
+- -- 18
+* -- 85
+:= -- 180
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 18
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 36
+empty$ -- 83
+format.name$ -- 18
+if$ -- 211
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 18
+preamble$ -- 1
+purify$ -- 15
+quote$ -- 0
+skip$ -- 22
+stack$ -- 0
+substring$ -- 58
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 0
+while$ -- 8
+width$ -- 4
+write$ -- 34
+(There was 1 error message)

@@ -1,0 +1,113 @@
+\documentclass{article}
+
+\usepackage{latexsym,times}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{graphicx,dblfloatfix}
+\usepackage{tabularx}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{caption}
+
+\setlength{\textwidth}{6.5in} \setlength{\textheight}{8.5in}
+\setlength{\columnsep}{2.0pc} \evensidemargin=0in
+\oddsidemargin=0in
+\renewcommand{\textfloatsep}{8pt}
+\topmargin=-0.43in \topskip=0pt
+\renewcommand{\textfraction}{0.0}
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\dbltopfraction}{1.0}
+
+\def\denseitems{
+\itemsep1pt plus1pt minus1pt
+\parsep0pt plus0pt
+\parskip0pt\topsep0pt}
+
+
+\newenvironment{smallitem}{
+   \setlength{\topsep}{0pt}
+   \setlength{\partopsep}{0pt}
+   \setlength{\parskip}{0pt}
+   \begin{itemize}
+   \setlength{\leftmargin}{.2in}
+   \setlength{\parsep}{0pt}
+   \setlength{\parskip}{0pt}
+   \setlength{\itemsep}{0pt}}{\end{itemize}}
+
+\newenvironment{smallenum}{
+   \setlength{\topsep}{0pt}
+   \setlength{\partopsep}{0pt}
+   \setlength{\parskip}{0pt}
+   \begin{enumerate}
+   \setlength{\leftmargin}{.2in}
+   \setlength{\parsep}{0pt}
+   \setlength{\parskip}{0pt}
+   \setlength{\itemsep}{0pt}}{\end{enumerate}}
+
+\newenvironment{smalldescription}{
+   \setlength{\topsep}{0pt}
+   \setlength{\partopsep}{0pt}
+   \setlength{\parskip}{0pt}
+   \begin{description}
+   \setlength{\leftmargin}{.2in}
+   \setlength{\parsep}{0pt}
+   \setlength{\parskip}{0pt}
+   \setlength{\itemsep}{0pt}}{\end{description}}
+
+%\newcommand{\comment}[1]{{\sf (#1)}}
+%\newcommand{\equationstart}{\small
+%\abovedisplayskip=2pt \belowdisplayskip=2pt
+%\abovedisplayshortskip=6pt \belowdisplayshortskip=6pt}
+
+\newcommand{\equationend}{\normalsize}
+
+\begin{document}
+
+\input{epsf}
+
+\pagestyle{plain}
+
+ \title{An Efficient Regression Testing Approach \\
+for PHP Web Applications: A Controlled Experiment}
+
+\author{
+Hyunsook Do \\
+North Dakota State U. \\
+Fargo, ND\\
+hyunsook.do@ndsu.edu
+\and 
+Md. Hossain \\
+North Dakota State U. \\
+Fargo, ND\\
+md.i.hossain@ndsu.edu
+}
+
+\maketitle
+\thispagestyle{empty}
+
+
+\input{abstract.tex}
+
+\vspace*{6pt}
+\textbf{Keywords: }{Regression testing, impact analysis, 
+test case generation, PHP web applications, empirical studies.}
+
+\vspace*{12pt}
+
+\baselineskip=18pt
+
+\input{introduction.tex}
+\input{methodology.tex}
+\input{study.tex}
+\input{analysis.tex}
+\input{discussion.tex}
+\input{background.tex}
+\input{conclusions.tex}
+\input{acks.tex}
+
+\bibliographystyle{plain}
+\bibliography{paper}
+
+\end{document}

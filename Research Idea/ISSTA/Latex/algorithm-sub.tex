@@ -1,0 +1,50 @@
+%\begin{algorithm}[htb]
+\begin{algorithm}[ht]
+\caption{PDG Traverser}
+\label{fig:walkpath}
+\begin{algorithmic}[1]
+{\footnotesize
+\Procedure{PDGTraverser}{$currentPath$, $paths$, $edges$, $slice$, $currentNode$}
+		
+	\While{$currentPath$[lastNode].occursBefore($slice$.endNodes())}
+		\If{$currentPath$.containsNoDiffNodes() $\wedge$ $currentPath$.cannotReachAdiffNode()}
+		\State	\textbf{Return}
+		\EndIf
+		\If{$slice[n]$.contains($currentNode$)}
+			\State $slice[n]$.remove($currentNode$)
+		\EndIf
+		\If{$currentPath$[lastNode].getExits.Size() $> 1$}	
+			\For {$n \leftarrow currentPath$[lastNode].getExits.Size()-1,0,$n$--}
+				\If {$currentNode$.exitEdge($n) \notin  edges$}
+					\State $edges$.add($currentNode$.exitEdge($n$)
+					\If {$n$ == 0}
+						\State $curentNode \longleftarrow currentNode$.exit(n)
+						\State $currentPath$.add($currentNode$);
+						\State continue(2); \Comment{\textit{Go back to while loop}}
+					\EndIf
+					\State PDGTraverser($currentPath$.copy(), $paths$, $edges$, $slice$, $currentNode$.exit($n$))
+				\Else
+					\If{$currentNode$.exitEdge($n$) $\in currentPath$}
+					\State $currentNode \longleftarrow$ findFirstNodeOutsideofLoop() 
+					\EndIf
+				\EndIf
+					
+			\EndFor 
+		\Else
+			\State $curentNode \longleftarrow currentNode$.exit(0)
+			\State $currentPath$.add($currentNode$);
+		\EndIf
+	\EndWhile
+	\If{$currentPath$[lastNode].isNotASliceEndNode()}
+		\If {$currentPath$[lastNode].canReachASliceEndNode()}
+			\State $currentPath$.findSliceEndNode();
+		\Else
+			\State \textbf{Return}
+		\EndIf
+	\EndIf
+	\State $paths$.add($curentPath$)
+\EndProcedure
+}
+%\vspace*{3pt}
+\end{algorithmic}
+\end{algorithm}

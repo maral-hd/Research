@@ -1,0 +1,15 @@
+Control Flow Analysis and Coverage Driven Testing for Web Services
+
+
+In this paper authors used a combined technique of pagerank algorithm for testing web services. 
+
+in this paper they show,  the information from both message and control flows can be combined to enhance the test quality.
+
+Google pagerank calculat es t he linkage based “coverage score” for each operation.
+
+Instead, they adopt a graph-theoretic interpretation of entailment motivated by graph isomorphism.
+
+One software testing strategy is to maximize code coverage with minimal set of test cases. 
+
+For flow based coverage test , they have to rank operations such that an operation with a high rank score would imply more operations must be “visited ”
+before reaching this operation. Those “visited ” operationsare thus “covered ” by this operation. Consequently, this operation would lead to high test coverage.

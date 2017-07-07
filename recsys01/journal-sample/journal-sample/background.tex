@@ -1,0 +1,92 @@
+\section{Related Work}
+\label{sec:related-work}
+
+To date, many regression testing techniques have been proposed,
+and most of them have focused on reusing the existing test cases 
+for regression test selection (e.g., \cite{rothermel97apr, yoo07})
+and test case prioritization (e.g., \cite{elbaum02feb, walcott06}).
+Existing test cases, however, are often insufficient to retest code 
+or system behaviors that are affected by code changes.
+
+To address this problem, recently, 
+researchers have started working on test suite augmentation
+techniques which create new test cases for areas that have been
+affected by changes~\cite{apiwattanapong06, santelices11, xu10, 
+xu11, taneja11, chen07}. Apiwattanapong et al.~\cite{apiwattanapong06} 
+and Santelices et al.~\cite{santelices11} present an approach to 
+identify areas affected by code changes using program dependence 
+analysis and symbolic execution, and provide test requirements 
+for changed software. Xu et al.~\cite{xu10, xu11} present an approach 
+to generate test cases by utilizing the existing test cases and 
+adapting a concolic test case generation technique. 
+Taneja et al. \cite{taneja11} propose an efficient test
+generation technique that uses dynamic symbolic execution, eXpress, 
+by pruning irrelevant paths. These approaches focus on desktop
+applications such as C or Java, but our approach applies regression
+testing to web applications, creating different challenges
+(e.g., dynamic programming languages deployed using multi-tier architecture).
+
+Creating executable test cases automatically has been one of 
+the challenging tasks for the software testing community~\cite{demillo91}, 
+and recent research in this area has proposed a promising approach which 
+involves concolic testing (a combination of concrete and symbolic 
+execution)~\cite{sen05}. Since then, other researchers have extended 
+the concolic technique to handle PHP code~\cite{wassermann08jul, artzi10}.
+Wassermann et al.~\cite{ wassermann08jul} and Artzi et al.~\cite{artzi10} 
+have also utilized a concolic approach to generate test cases for PHP 
+web applications. Other test case generation techniques for web applications 
+use crawlers and spiders to identify  and test web application interfaces. 
+Ricca and Tonella~\cite{ricca01} use a crawler to discover the link structure
+of web applications and to produce test case specifications from this
+structure. Deng et al.~\cite{deng04} use static analysis
+to extract information related to URLs and their parameters for
+web applications, and to generate executable test cases using the
+collected information. Halfond et al.~\cite{halfond09} present an
+approach that uses symbolic execution to identify precise interfaces
+for web applications. 
+
+Other researchers have investigated test case problems considering 
+models of the specifications of the system rather than source 
+code~\cite{chen07, korel02, fourneret11, naslavsky10, samuel09}. 
+Chen et al.~\cite{chen07} present a model-based approach that generates 
+a regression test suite using dependence analysis of the modified elements 
+in the model. Similarly, Fourneret et al.~\cite{fourneret11} generate 
+necessary test cases for the modified portion of the model (UML) using 
+requirements informations and impact analysis. Samuel and 
+Mall~\cite{samuel09} generate test cases from UML activity diagrams 
+using a dynamic slicing technique. Some work on model-based regression 
+testing with existing test cases has been done. Korel et al.~\cite{korel02} 
+use dependence analysis of Extended Finite State Machine (EFSM) models 
+to reduce the size of regression test suites. 
+Naslavsky et al.~\cite{naslavsky10} present a test selection technique
+that selects test cases for the modified models by establish traceability 
+relationships among entities in models and existing test cases. 
+
+While these existing techniques and approaches have motivated us, 
+our work is different from theirs in the following aspect.
+Our work focuses on evolving web applications that
+require frequent patches and regression testing. This means that, unlike
+other approaches, we focus only on the areas affected by code changes
+and generate test cases using program slicing. Some work on regression
+testing for web applications~\cite{dobolyi09, elbaum03} has been done,
+but their focus is different than ours. Dobolyi and Weimer~\cite{dobolyi09} 
+present an approach that automatically compares the outputs from similar 
+web applications to reduce the regression testing effort.
+Elbaum et al.~\cite{elbaum03} present a web application testing technique 
+that utilizes user session data considering regression testing contexts.
+
+Another research area that is relevant to our work is program slicing.
+Program slicing is a heavily researched area of software engineering.
+Weiser~\cite{weiser81} formally defined program slicing as a way to
+determine which areas of a program are affected by which variables
+in a specific line of source code. Agrawal et al.~\cite{agrawal90}
+expanded this work by determining the statements which can be affected
+by a variable occurrence for a specific input value.
+Horwitz et al.~\cite{horwitz88, horwitz90} also contributed by developing a way
+to generate slices that traversed multiple procedures using system
+dependence graphs. Gupta et al.~\cite{gupta92nov, gupta96jun} have
+applied program slicing techniques to the area of selective regression
+testing. Ricca and Tonella~\cite{ricca02} presented an approach to construct
+program dependency graphs for web applications and addressed problems with
+handling event/hyperlink and dynamic nature of web applications.   
+

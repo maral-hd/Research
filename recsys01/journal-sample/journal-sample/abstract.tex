@@ -1,0 +1,32 @@
+\begin{abstract}
+
+Companies that provide
+web applications often encounter various security
+attacks and frequent feature update demands from users,
+and when these needs arise, companies need to fix security
+problems or upgrade the application with new features.
+These fixes often involve small patches
+or revisions, but still, testers need to perform regression
+testing on their products to ensure that the changes have not 
+introduced new faults. Performing regression testing on the entire 
+product, however, can be very expensive, and it is not a viable  
+solution for the companies who need a short turnaround time to  
+release patches. One solution is focusing only on the areas of 
+code that have been changed and performing regression testing 
+on them. By doing this, companies can provide quick patches more 
+dependably whenever they encounter security breaches. In this paper, 
+we propose a new regression testing approach that identifies 
+the affected areas by code changes using impact analysis and 
+generates new test cases for the impacted areas by changes using 
+program slices. To facilitate our approach, we implemented 
+a PHP Analysis and Regression Testing Engine (PARTE) and performed 
+a controlled experiment using five open source web applications
+with multiple versions.
+The results show that our approach is effective in reducing 
+the cost of regression testing for a frequently patched web 
+application, and they also expose ways in which that 
+effectiveness can vary with application characteristics
+and versioning frequencies.  
+
+\end{abstract}
+

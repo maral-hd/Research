@@ -1,0 +1,60 @@
+\section{Threats to Validity}
+\label{sec:validity}
+
+The primary threat to validity of this study is the amount of
+user session data and the type of users who participated in this
+study. For the private application that we used in this study,
+we collected user interaction data for a long period time; 
+the collected data was created by actual users of 
+the application. However, for the two open source applications, 
+the period of time that we collected user interactions was relatively 
+short, and the participants were not domain experts or regular users 
+of the applications so their usage patterns had wide variations.
+This threat can be addressed by performing additional studies that
+monitor user interactions over a longer time period among a wider population,
+by considering industrial applications and different types of 
+applications (e.g., mobile applications).
+ 
+Another threat to validity is the choice of algorithms that classify 
+components' frequency access ranking and analyze change impact. 
+In this study, we applied various algorithms to create our classification
+model, but many other classification algorithms (e.g., decision tree and
+apriori algorithms) are available, and they could produce different results.
+The results can vary depending on the type of classification algorithms, 
+the parameters set for classification algorithms, the variables being analyzed, 
+and the environmental settings. 
+
+There is another concern regarding the bug reports that we used.
+Our classification prediction values for designing linear models 
+in the change impact analysis were generated from bug history that 
+was reported by actual users.
+Further, using these bug reports, we measured the coefficient of other 
+variables to create our linear model for change impact analysis.
+Because our bug report data is not comprehensive and contains 
+only those bugs accrued 
+until the time that we stopped collecting data, 
+and because there might 
+be other bugs that have not been reported yet or that might occur 
+later, there is a possibility that the bug reports are biased.
+
+
+%In this section, we describe the internal and external
+%threats to the validity of our study. We also describe 
+%the approaches we used to limit the effects of these threats.
+%
+%{\em Internal Validity:}
+%The outcome of our study could be affected by the choice of 
+%program analysis. We applied static analysis on a dynamic programming 
+%language, PHP. To do so, we had to change many statements in the 
+%program during the file preparation phase, removing and fixing 
+%many dynamic environment variables. However, we carefully examined 
+%our process to minimize the adversary effect that might be introduced
+%into the converted files.  
+%
+%{\em External Validity.}
+%We used open source web applications for our study, so these programs 
+%are not representative of the applications used in practice, and thus
+%we cannot generalize our results. However, we tried to reduce this 
+%threat by using five non-trivial sized web applications with multiple 
+%versions that have been utilized by many users. 
+

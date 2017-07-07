@@ -1,0 +1,257 @@
+\begin{thebibliography}{10}
+
+\bibitem{nopCommerece}
+hhttp://www.nopcommerce.com/.
+\newblock [\relax{Accessed: Jan. 26, 2017}].
+
+\bibitem{coevery}
+http://www.coevery.com/.
+\newblock [\relax{Accessed: Jan. 26, 2017}].
+
+\bibitem{rich}
+D.~Amalfitano, A.~R. Fasolino, and P.~Tramontana.
+\newblock Rich internet application testing using execution trace data.
+\newblock In {\em In Software Testing, Verification, and Validation Workshops},
+  pages 274--283. IEEE-ACM, 2010.
+
+\bibitem{jeff16}
+J.~Anderson, H.~Do, and S.~Salem.
+\newblock Customized regression testing using telemetry usage patterns.
+\newblock In {\em {Software Maintenance and Evolution (ICSME), 2016 IEEE
+  International Conference on}}. IEEE, 2016.
+
+\bibitem{jeff14}
+J.~Anderson, S.~Salem, and H.~Do.
+\newblock Improving the effectiveness of test suite through mining historical
+  data.
+\newblock In {\em Working Conference on Mining Software Repositories (MSR)},
+  2014.
+
+\bibitem{who}
+J.~Anvik, L.~Hiew, and G.~C. Murphy.
+\newblock Who should fix this bug?
+\newblock In {\em {Proceedings of the 28th international conference on Software
+  engineering}}, pages 361--370. IEEE-ACM, 2006.
+
+\bibitem{change3}
+Shawn~A. Bohner.
+\newblock Extending software change impact analysis into cots components.
+\newblock In {\em Proceedings of the 27th Annual NASA Goddard Software
+  Engineering Workshop}, page 175. IEEE-ACM, 2002.
+
+\bibitem{memongui}
+P.~A. Brooks and A.~M. Memon.
+\newblock Automated gui testing guided by usage profiles.
+\newblock In {\em In Proceedings of the twenty-second IEEE/ACM international
+  conference on Automated software engineering}, pages 333--342. IEEE-ACM,
+  2007.
+
+\bibitem{ryan}
+R.~Carlson, H.~Do, , and A.~Denton.
+\newblock A clustering approach to improving test case prioritization: An
+  industrial case study.
+\newblock In {\em {ICSM '11 Proceedings of the 2011 27th IEEE International
+  Conference on Software Maintenanc}}, pages 382--391. IEEE-ACM, 2011.
+
+\bibitem{catal13}
+C.~Catal and D.~Mishra.
+\newblock {Test case prioritization: A systematic mapping study}.
+\newblock {\em {Software Quality Journal}}, 21:445--478, 2013.
+
+\bibitem{chenRisk}
+Y.~Chen, R.~L. Probert, and D.~P. Sims.
+\newblock Specification-based regression test selection with risk analysis.
+\newblock In {\em Proceedings of the conference of the Centre for Advanced
+  Studies on Collaborative research (CASCON)}, 2002.
+
+\bibitem{costas}
+K.~Christidis, F.~Paraskevopoulos, D.~Panagiotou, and G.~Mentzas.
+\newblock Combining activity metrics and contribution topics for software
+  recommendations.
+\newblock In {\em Proceedings of the Third International Workshop on
+  Recommendation Systems for Software Engineering}, pages 43--46. IEEE-ACM,
+  2012.
+
+\bibitem{contextawar}
+A.~Danylenko and W.~Lowe.
+\newblock Context-aware recommender systems for non-functional requirements.
+\newblock In {\em Proceedings of the Third International Workshop on
+  Recommendation Systems for Software Engineering}, pages 80--84. IEEE-ACM,
+  2012.
+
+\bibitem{cost3}
+H.~Do, S.~Mirarab, L.~Tahvildari, and G.~Rothermel.
+\newblock An empirical study of the effect of time constraints on the
+  cost-benefits of regression testing.
+\newblock In {\em Proceedings of the ACM SIGSOFT Symposium on Foundations of
+  Software Engineering (FSE)}. IEEE-ACM, 2008.
+
+\bibitem{cost1}
+H.~Do, S.~Mirarab, L.~Tahvildari, and G.~Rothermel.
+\newblock The effects of time constraints on test case prioritization: A series
+  of controlled experiments.
+\newblock 36(5), 2010.
+
+\bibitem{elbaum02feb}
+S.~Elbaum, A.~G. Malishevsky, and G.~Rothermel.
+\newblock {Test case prioritization: A family of empirical studies}.
+\newblock {\em {IEEE Transactions on Software Engineering}}, 28(2):159--182,
+  February 2002.
+
+\bibitem{Malishevsky02}
+S.~Elhaum, A.~G. Malishevsky, , and G.~Rothermel.
+\newblock Test case prioritization: A family of empirical studies.
+\newblock 28(2):159--182, 2002.
+
+\bibitem{weyuker}
+P.~Frankl and E.~Weyuker.
+\newblock Testing software to detect and reduce risk.
+\newblock In {\em Journal of Systems and Software}, 2000.
+
+\bibitem{recomsurvey05}
+G. and A.~Tuzhilin.
+\newblock Toward the next generation of recommender systems a survey of the
+  state of the art and possible extensions.
+\newblock {\em IEEE Transactions on knowledge and Data Engineering},
+  17(6):734--749, 2005.
+
+\bibitem{kagdichange}
+M.~Gethers, B.~Dit, H.~Kagdi, and D.~Poshyvanyk.
+\newblock Integrated impact analysis for managing software changes.
+\newblock In {\em Proceedings of the 34th International Conference on Software
+  Engineering}, pages 430--440. IEEE-ACM, 2012.
+
+\bibitem{method}
+E.~Giger, M.~D'Amborce, M.~Pinzger, and H.~Gall.
+\newblock Method-level bug prediction.
+\newblock In {\em ESEM}, 2012.
+
+\bibitem{risk}
+C.~Hettiarachchi, H.~Do, and B.~Choi.
+\newblock Effective regression testing using requirements and risks.
+\newblock In {\em {Eighth International Conference on Software Security and
+  Reliability}}, pages 157--166. IEEE, 2014.
+
+\bibitem{jeffrey06sep}
+D.~Jeffrey and N.~Gupta.
+\newblock {Test case prioritization using relevant slices}.
+\newblock In {\em {Int'l Comp. Soft. Appl. Conf.}}, pages 411--420, September
+  2006.
+
+\bibitem{change1}
+Y.~Jiang, B.~Cuki, T~Menzies, and N~Bartlow.
+\newblock Comparing design and code metrics for software quality prediction.
+\newblock In {\em {Proceedings of the 4th international workshop on Predictor
+  models in software engineering}}, pages 11--18. ACM, 2008.
+
+\bibitem{kim02may}
+J.~Kim and A.~Porter.
+\newblock A history-based test prioritization technique for regression testing
+  in resource constrained environments.
+\newblock In {\em {Proceedings of the International Conference on Software
+  Engineering}}, May 2002.
+
+\bibitem{sungmicro}
+T.~Lee, J.~Nam, D.~Han, S.~Kim, and H.~Peter.
+\newblock Micro interaction metrics for defect prediction.
+\newblock In {\em {ESEC/FSE '11 Proceedings of the 19th ACM SIGSOFT symposium
+  and the 13th European conference on Foundations of software engineering}},
+  pages 311--321. IEEE-ACM, 2011.
+
+\bibitem{mirarab07}
+S.~Mirarab and L.~Tahvildari.
+\newblock {A prioritization approach for software test cases on Baysian
+  Networks}.
+\newblock In {\em {Found. App. Softw. Eng.}}, pages 276--290, March 2007.
+
+\bibitem{raimund}
+R.~Moser, W.~Pedrycz, and G.~Succi.
+\newblock A comparative analysis of the efficiency of change metrics and static
+  code attributes for defect prediction.
+\newblock In {\em {ICSE '08 Proceedings of the 30th international conference on
+  Software engineering}}, pages 181--190. IEEE-ACM, 2008.
+
+\bibitem{murakami}
+N.~Murakami, H.~Masuhara, and T.~Aotani.
+\newblock Code recommendation based on a degree-of-interest model.
+\newblock In {\em Proceedings of the 4th International Workshop on
+  Recommendation Systems for Software Engineering}, pages 28--29. IEEE-ACM,
+  2014.
+
+\bibitem{change2}
+N.~Nagappan and T.~Ball.
+\newblock Use of relative code churn measures to predict system defect density.
+\newblock In {\em {ICSE '05 Proceedings of the 27th international conference on
+  Software engineering}}, pages 284--292. IEEE-ACM, 2005.
+
+\bibitem{myra}
+X.~Qu, M.B. Cohen, and G.Rothermel.
+\newblock Configuration-aware regression testing: an empirical study of
+  sampling and prioritization.
+\newblock In {\em International Symposium on Software Testing and Analysis
+  (ISSTA)}, pages 75--85. IEEE-ACM, 2008.
+
+\bibitem{rssebook}
+M.~P. Robillard, W.~Maalej, R.~J. Walker, and T.~Zimmermann.
+\newblock {\em {Recommendation Systems in Software Engineering}}.
+\newblock Springer, 2014.
+
+\bibitem{apfd}
+G.~Rothermel, R.~Untch, C.~Chu, , and M.~J. Harrold.
+\newblock Test case prioritization: An empirical study.
+\newblock In {\em Proceedings of the IEEE International Conference on Software
+  Maintenance}, pages 179--188. IEEE-ACM, 1999.
+
+\bibitem{rothermel01oct}
+G.~Rothermel, R.~Untch, C.~Chu, and M.~J. Harrold.
+\newblock {Prioritizing test cases for regression testing}.
+\newblock {\em {IEEE Transactions on Software Engineering}}, 27(10):929--948,
+  October 2001.
+
+\bibitem{bryce08}
+S~Sampath, R.~C. Bryce, G.~Viswanath, V.~Kandimalla, and A.~G. Koru.
+\newblock Prioritizing user-session-based test cases for web applications
+  testing.
+\newblock In {\em {ICST '08 Proceedings of the 2008 International Conference on
+  Software Testing, Verification, and Validation}}, pages 141--150. IEEE-ACM,
+  2008.
+
+\bibitem{recom}
+B.~Sarwar, G.~Karypis, J.~Konstan, and J.~Riedl.
+\newblock Item-based collaborative filtering recommendation algorithms.
+\newblock In {\em {Proceedings of the 10th international conference on World
+  Wide Web}}, pages 285--295. IEEE-ACM, 2001.
+
+\bibitem{sherriff07}
+M.~Sherriff, M.~Lake, and L.~Williams.
+\newblock Prioritization of regression tests using singular value decomposition
+  with empirical change records.
+\newblock In {\em {Proceedings of the International Symposium on Software
+  Reliability Engineering}}, pages 81--90, November 2007.
+
+\bibitem{shihab12}
+E.~Shihab, A.~E. Hassan, B.~Adams, and Z.~M. Jiang.
+\newblock An industrial study on the risk of software changes.
+\newblock In {\em {FSE '12 Proceedings of the ACM SIGSOFT 20th International
+  Symposium on the Foundations of Software Engineering}}, page~62. ACM, 2012.
+
+\bibitem{coderecommender}
+R.~Robillard Walker and T.~Zimmermann.
+\newblock Recommendation systems for software engineering.
+\newblock In {\em Proceedings of the 27th International Conference on Software
+  Engineering}, pages 80--86. IEEE Press, 2010.
+
+\bibitem{marksurvey}
+S.~Yoo and M.~Harman.
+\newblock Regression testing minimization, selection and prioritization: a
+  survey.
+\newblock {\em {Software Testing, Verification and Reliability}},
+  22(2):67--120, 2012.
+
+\bibitem{sara}
+M.~Zanjani, H.~Kagdi, and C.~Bird.
+\newblock Automatically recommending peer reviewers in modern code review.
+\newblock In {\em { In Proceedings of the 37th International Conference on
+  Software Engineering}}. IEEE, 2015.
+
+\end{thebibliography}

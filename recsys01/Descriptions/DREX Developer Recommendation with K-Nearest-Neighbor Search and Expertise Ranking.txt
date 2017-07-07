@@ -1,0 +1,23 @@
+DREX: Developer Recommendation with K-Nearest-Neighbor Search and Expertise Ranking
+
+This paper studies the problem of automatic recommendation of developers to bug reports to which the developers may contribute potential knowledge. 
+By utilizing the information of historical bug reports and its following comments in open bug repository. 
+The first component is to search similar historical bug reports within its -nearest neighbors and the second component is to rank developers’ expertise using developers’ participation
+records in discussing the similar bug reports. Here, Frequency and social network metrics are adopted to rank the developers’expertise on resolving the new bug reports.
+
+Also, they adopt various metrics for developers’ expertise ranking, including simple Frequency and other six social network metrics as Indegree, Outdegree, Degree, PageRank, Betweenness and Closeness.
+
+They have a databse of history of bugs. This is like a train dataset for them. 
+Then they will compare new bugs with that dataset of bugs and compare the new bugs with old one by using KNN, so, they are clustering new bugs to appropriate cluster. 
+Moreover, they have used information retirival concept such as cosine similarity and verctorization for clustering. 
+Another part of the research, authors have used social network concept for ranking developers.
+By applying graph techniques they are ranking developers based on their position in the network. 
+
+Four metrics as degree centrality, in-degree centrality and out-degree centrality, 
+PageRank, betweenness centrality and closenesss centrality are used to rank the developers’ expertise.
+
+work flow is like this: Bug clustering > Ranking developer based on their position and experties > assign bugs to developer!
+
+ 
+
+SOCIAL NETWORK ANALYSIS!!!!!!

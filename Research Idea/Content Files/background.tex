@@ -1,0 +1,87 @@
+\section{Related Work}
+\label{sec:related-work}
+
+In this section, we discuss studies of  regression testing focusing on 
+test case prioritization techniques that are most closely 
+related to our work. Further, we discuss recommender systems 
+and research related to that topic.
+
+\subsubsection*{Test Case Prioritization}   
+Test case prioritization techniques reorder test cases to maximize
+some objective functions, such as detecting defects as early as possible.
+Due to the appealing benefits of test case prioritization in practice, 
+many researchers and practitioners
+have proposed and studied various test case prioritization 
+techniques. For example, these techniques help engineers discover faults
+early in testing, which allows them to begin debugging earlier.
+In this case, entire test suites may still be executed, which avoids 
+the potential drawbacks associated with omitting test cases. 
+Recent surveys ~\cite{catal13, marksurvey} provide a comprehensive 
+understanding of overall trends of the techniques and suggest areas for improvement.
+
+Depending on the types of information available, various test case
+prioritization techniques can be utilized, but 
+the majority of prioritization techniques have used source code
+information to implement the techniques.
+For instance, many researchers have utilized code coverage information
+to implement prioritization techniques~\cite{elbaum02feb, kim02may,rothermel01oct}. Although this approach is simple and naïve, many empirical
+studies have shown that this approach can be effective~\cite{cost3, 
+cost1, Malishevsky02, myra}.
+Recent prioritization techniques have used other
+types of code information, such as slices~\cite{jeffrey06sep}, change
+history~\cite{sherriff07}, code modification information, and fault
+proneness of code~\cite{mirarab07}.
+
+More recently, several prioritization techniques 
+utilizing other types of information have also been proposed. 
+For example, Anderson et al.  applied telemetry data to compute fingerprints 
+to extract usage patterns and for test prioritization~\cite{jeff16}.
+Memon and Amalfitano performed a study in which they applied telemetry 
+data to generate usage pattern profiles~\cite{memongui}.  
+In another study, Amalfitano et al. built finite state models
+based on usage data that they collected from rich Internet applications ~\cite{rich}. 
+Carlson et al.~\cite{ryan} presented clustering-based techniques that
+utilize real fault history information including code coverage.
+Anderson et al.~\cite{jeff14} investigated the use of various code features
+mined from a large software repository to improve regression testing techniques.
+Gethers et al. presented a method  that uses textual change of source code
+to estimate an impact set ~\cite{kagdichange}. 
+
+\subsubsection*{Recommender Systems}  
+Recommender systems are software engineering tools that make 
+the decision making process easier by providing a list of relevant items.
+There are three primary  categories in recommender systems:
+content-based algorithms, collaborative filtering algorithms, and hybrid approaches ~\cite{recomsurvey05}.  
+Recommender systems are commonly used by users in their daily routines, 
+helping in such tasks as finding 
+their target items more easily.
+Some widely-used applications that provide recommender systems
+are Amazon, Facebook, and Netflix. These applications provide suggestions
+to target users based on the user or item characteristic similarities.  
+
+Further, in the area of software engineering, due to the decline in hardware 
+facility prices, a variety of information is collected by software 
+providers, such as change history, issue reports and databases, user log files, 
+and so on.
+With the fast growth of such information, machine learning technologies  
+motivate software engineers to apply recommendation systems in software 
+development. Recommender systems in software engineering have been applied  
+to improve software quality and to address the challenges of development process~\cite{rssebook}.  
+For instance, Murakami et al. ~\cite{murakami} proposed a technique that 
+uses user editing activities  detecting code relevant to existing methods. 
+Christidis et al. ~\cite{costas} implemented a recommender system 
+to display developer activities by using information artifacts with quantitative metrics. 
+Danylenko and Lowe provided a context-aware recommender system 
+to automate a decision-making process for determining the efficiency of 
+non-functional requirements ~\cite{contextawar}.
+
+As we discussed briefly, there are many types of information available 
+for implementing test case prioritization techniques.
+In this research, we collected over 2,000 user sessions from 
+three different web applications and gathered the change history of each application. 
+Our research seeks to apply item-based collaborative filtering algorithms 
+to generate a recommendation list of test cases for 
+test prioritization.
+To our knowledge, our recommender system-based prioritization technique is novel 
+and has not yet been explored in the regression testing area.
+

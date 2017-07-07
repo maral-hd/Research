@@ -1,0 +1,26 @@
+Graph-Based Analysis and Prediction for Software Evolution 
+
+Research questions of this paper are: 
+(a) How can we improve maintenance by identifying which components to debug, test, or refactor first?, and
+(b) Can we predict the defect count of an upcoming software release?
+
+
+Note that our intention is not to find the best possible method for each question, but to examine if a graph-based
+method can help, through the use of an appropriatelyconstructed graph model of the software system.
+
+Our thesis is that graph-based approaches can help to better understand software evolution, and to construct predictors
+that facilitate development and maintenance.
+
+Our results show that our graph metrics can detect significant structural changes,
+and can help us estimate bug severity, prioritize debugging efforts, and predict defect-prone releases.
+
+We use two construction methods: the bugbased developer collaboration, which captures how a bugfix
+is passed among developers, and commit-based developer collaboration which represents how many developers
+collaborated in events other than bug fixes, by analyzing the commit logs.
+
+We show how NodeRank, a graph metric akin to PageRank, can predict bug severity.
+2. We show how the Modularity Ratio metric can predict which modules will incur high maintenance effort.
+3. We demonstrate that by analyzing the edit distance in the developer collaboration graphs we can predict failureprone releases.
+
+We use the source code to construct graphs at two abstraction levels: function (call graph) and module (module collaboration graph). 
+To construct these graphs, we extended CodeViz [15], a static analysis tool, to extract function call information and global variable usage.
